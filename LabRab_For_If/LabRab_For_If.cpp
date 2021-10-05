@@ -25,7 +25,7 @@ void task3()
 		count++;  // counter of numbers
 		sum += n; //sum of numbers
 	}
-	std::cout << "Average number is " << float(sum / count) << "\n"<<"\n";
+	std::cout << "Average number is " << double(sum) / double(count) << "\n"<<"\n";
 }
 
 void task2() {
@@ -33,7 +33,7 @@ void task2() {
 	double numb = 1;
 	std::cout << "Enter a number: ";
 	std::cin >> st;
-	std::cout << numb;
+	std::cout << numb << " ";
 	
 	for (int i = 1; i <= st; i++) {
 		numb = numb * (st - (i - 1)) / i;

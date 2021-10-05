@@ -70,8 +70,8 @@ int main(){
     std::cout << "Answer: " << z/n << "\n";
 
             //task 5
-    double m, l;
+    int m, l;
     std::cout << "Enter the coordinates of a line segment: ";   
     std::cin >> m >> l;
-    std::cout << "The midpoint of the line is at the point: " << (m + l) / 2 << "\n";
+    std::cout << "The midpoint of the line is at the point: " << double(m + l) / 2 << "\n";
 }
