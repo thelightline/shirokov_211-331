@@ -31,7 +31,7 @@ void task3()
 void task2() {
 	int st;
 	double numb = 1;
-	std::cout << "Enter a number: ";
+	std::cout << "Enter a number: ";  
 	std::cin >> st;
 	std::cout << numb << " ";
 	
