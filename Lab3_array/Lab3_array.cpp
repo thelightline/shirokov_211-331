@@ -27,8 +27,6 @@ void print_mas_symbols(int* temp_mas)
 				temp_mas[i]--;
 			}
 		}
-
-		//std::cout << i << " ";
 	}
 	std::cout << std::endl;
 }
@@ -50,8 +48,8 @@ void merge(int* tmp_arr, int first, int last, int* b)
 			b[i] = tmp_arr[right];
 			right++;
 		}
-	//возвращение результата в список
-	for (int i = first; i <= last; i++) tmp_arr[i] = b[i];
+	for (int i = first; i <= last; i++)
+		tmp_arr[i] = b[i];
 };
 
 void merge_sort(int* tmp_arr, int first, int last, int* b)
@@ -68,7 +66,7 @@ void merge_sort(int* tmp_arr, int first, int last, int* b)
 
 int bubble(int* arr) {
 	int smena = 0;
-	for (unsigned int i = 0; i < 999; i++) {
+	for (unsigned int i = 0; i < 1000; i++) {
 		for (unsigned int j = 0; j < 999; j++) {
 			if (arr[j] >= arr[j + 1]) {
 				smena = arr[j];
@@ -116,7 +114,7 @@ void Task3() {
 	cout << "Enter the array numbers: ";
 	while (n != 0) {
 		cin >> n;
-		a[count] = n;
+		a[count] = n;	
 		count++;  // counter of numbers
 	}
 	count--; //without 0
