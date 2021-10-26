@@ -10,11 +10,11 @@ bool Palindrom(char* str, int count) {
 }
 
 int find_substring1(const char* str_for_search_in, const char* substring, int start_position) {
-	int flag = 0, len, len_subs, i, j, k;
+	int flag = 0, len, len_subs;
 	len = strlen(str_for_search_in);
 	len_subs = strlen(substring);
-	for (i = start_position; i < len - len_subs + 1; i++) {
-		for (j = 0, k = i; j < len_subs; j++, k++) {
+	for (int i = start_position; i < len - len_subs + 1; i++) {
+		for (int j = 0, k = i; j < len_subs; j++, k++) {
 			if (str_for_search_in[k] != substring[j]) {
 				flag = 0;
 				break;
@@ -29,7 +29,7 @@ int find_substring1(const char* str_for_search_in, const char* substring, int st
 }
 
 int* find_substring2(const char* str_for_search_in, const char* substring) {    
-	int  len, len_subs, array_lenght, start_index = 0, result, index = 0, flag = -1;
+	int  len, len_subs, start_index = 0, result, flag = -1;
 	len = strlen(str_for_search_in);
 	len_subs = strlen(substring);
 	result = find_substring1(str_for_search_in, substring, start_index);
@@ -41,7 +41,6 @@ int* find_substring2(const char* str_for_search_in, const char* substring) {
 		start_index++;
 		result = find_substring1(str_for_search_in, substring, start_index);
 	}
-
 	return   0;
 }
 
