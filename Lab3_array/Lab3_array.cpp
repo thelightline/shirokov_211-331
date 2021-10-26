@@ -48,7 +48,7 @@ void merge(int* tmp_arr, int first, int last, int* b)
 			b[i] = tmp_arr[right];
 			right++;
 		}
-	for (int i = first; i <= last; i++)
+	for (int i = first; i <= last; i++) 
 		tmp_arr[i] = b[i];
 };
 
