@@ -39,10 +39,10 @@ char file_disk(const string file_path_full) {
 // TASK 5
 bool file_rename(string& file_path_full) {
 	string format, new_name, path, new_file_path;
-	format = file_format(*&file_path_full);
+	format = file_format(file_path_full);
 	cout << "Enter new filename: ";
 	cin >> new_name;
-	path = file_path(*&file_path_full);
+	path = file_path(file_path_full);
 	new_file_path = file_path(*&file_path_full)+ '\\' + new_name + "." + format;
 	file_path_full = new_file_path;
 	return true;
