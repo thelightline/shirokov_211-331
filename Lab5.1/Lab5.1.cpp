@@ -19,6 +19,7 @@ int main()
 			"9) Количество строк\n" <<
 			"10) Вернуть (i, j) элемент" << "\n";
 		cin >> choice;
+		cout << "\n";
 		switch (choice)
 		{
 		case 1:
@@ -29,17 +30,18 @@ int main()
 		}
 		case 2:
 		{
-			cout << "Переделать";
+			matr2.input();
+			matr1.mult(&matr2);
 			break;
 		}
 		case 3:
 		{
-			matr1.trace();
+			cout << "След матрицы: " << matr1.trace() << "\n";
 			break;
 		}
 		case 4:
 		{
-			cout << matr1.det();
+			cout <<"Определитель раверн: "<< matr1.det() << "\n";
 			break;
 		}
 		case 5:
@@ -62,12 +64,12 @@ int main()
 		}
 		case 8:
 		{
-			cout << matr1.get_columns();
+			cout <<"Столбцов в матрице: "<< matr1.get_columns() << "\n";
 			break;
 		}
 		case 9:
 		{
-			cout << matr1.get_rows();
+			cout <<"Строк в матриец: "<< matr1.get_rows() << "\n";
 			break;
 		}
 		case 10:
@@ -76,7 +78,7 @@ int main()
 			cout << "Введите i и j: ";
 			cin >> i;
 			cin >> j;
-			cout << matr1.get_elem(i, j);
+			cout << matr1.get_elem(i, j) << "\n";
 			break;
 		}
 		default:
