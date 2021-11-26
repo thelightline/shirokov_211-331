@@ -62,7 +62,7 @@ double Matrix::trace() // сумма чисел матрицы по диагонаи
 }
 
 Matrix Matrix::mult(Matrix* matr2) { // умножение матриц
-	if (this->size_col != matr2->size_row) cout << "Ложная записьx";
+	if (this->size_col != matr2->size_row) cout << "Ложная запись";
 	else {
 		int res_col = matr2->size_col;
 		int k = 0;
@@ -75,11 +75,6 @@ Matrix Matrix::mult(Matrix* matr2) { // умножение матриц
 				for (int k = 0; k < this->size_col; k++)
 					res[i * res_col + j] += this->get_elem(i, k) * matr2->get_elem(k, j);
 			}
-		for (int i = 0; i < res_row; i++) {
-			for (int j = 0; j < res_col; j++)
-				cout << res[i * res_col + j] << " ";
-			cout << "\n";
-		}
 		cout << "\n";
 		return Matrix(res_col, res_row, res);
 	}
@@ -140,20 +135,18 @@ double Matrix::get_elem(int i, int j){ // вывод (i, j) элемента
 
 void Matrix::input(int col, int row)
 {
-	int a;
-	for (int i = 0; i < row; i++) 
-		for (int j = 0; j < col; j++) {
-			cin >> a;
-			elem[i * col + j] = a;
-		}
+	if (elem != nullptr) delete[] elem;
+	elem = new double[col * row];
+	for (int i = 0; i < col * row; i++)
+		cin >> elem[i];
+	cout << "\n";
 }
 
 void Matrix::input(int col, int row, double* arr) {
-	int k = 0;
-	for (int i = 0; i < row; i++)
-		for (int j = 0; j < col; j++) {
-			elem[i * col + j] = arr[k];
-			k++;
+	if (elem != nullptr) delete[] elem;
+	elem = new double[col * row];
+	for (int i = 0; i < col * row; i++){
+		elem[i]=arr[i];
 		}
 }
 
@@ -171,15 +164,23 @@ Matrix Matrix::mult(const double* arr)
 				for (int k = 0; k < this->size_col; k++)
 					res[i * res_col + j] += this->get_elem(i, k) * arr[k * res_col + j];
 			}
+		for (int i = 0; i < res_row; i++) {
+			for (int j = 0; j < res_col; j++)
+				cout << res[i * res_col + j] << " ";
+			cout << "\n";
+		}
+		cout << "\n";
 		return Matrix(res_col, res_row, res);;
 }
 
-Matrix Matrix::sum(const double* arr) {
-	if (size_col * size_row == sizeof(arr)){
+void Matrix::sum(const double* arr) {
+	if (size_col * size_row == (sizeof(arr)/sizeof(arr[0]))) {
 		for (int i = 0; i < size_col * size_row; i++)
 			this->elem[i] += arr[i];
-		return *this;
+		for (int k = 0; k < size_col; k++) {
+			for (int j = 0; j < size_col; j++)
+				cout << this->elem[k * size_col + j] << " ";
+			cout << "\n";
+		}
 	}
-	else
-		return *this;
 }

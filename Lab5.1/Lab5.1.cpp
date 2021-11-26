@@ -74,11 +74,19 @@ int main()
 		}
 		case 10:
 		{
-			int i, j;
-			cout << "Введите i и j: ";
+			int i, j, a;
+			cout << "Введите i: ";
 			cin >> i;
+			cout << "Введите j: ";
 			cin >> j;
-			cout << matr1.get_elem(i, j) << "\n";
+			double* arr = new double[i * j];;
+			cout << "Введите массив: ";
+			for (int k = 0; k < i * j; k++) {
+				cin >> a;
+				arr[k] = a;
+			}
+			matr1.mult(arr);
+			
 			break;
 		}
 		default:
