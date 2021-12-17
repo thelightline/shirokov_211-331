@@ -6,10 +6,9 @@
 
 int main()
 {
-	//	CIS CISA(2, 3, 4);
-	//	std::cout << CISA.lan();
-	//	std::cout << CISA.rad();
+	CIS CISA(2, 3, 4);
+	std::cout << CISA.lan() << "\n";
+	std::cout << CISA.rad() << "\n";
 	Position PosA(5, 3);
 	PosA.move(1, 1);
-
 }
