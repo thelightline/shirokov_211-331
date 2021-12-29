@@ -126,6 +126,9 @@ int main()
 				cout << point.x << " " << point.y << "\n";
 			cout << "\n";
 			break;
+
+		default:
+			return 0;
 		}
 	}
 	return 0;
