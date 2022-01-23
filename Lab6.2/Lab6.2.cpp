@@ -51,7 +51,7 @@ void convex_hull(deque<point>& A)
 {
 	if (A.size() == 1)  return;
 
-	sort(A.begin(), A.end(), &cmp); //слева направо с увеличением у
+	sort(A.begin(), A.end(), &cmp); //слева направо с увеличением x
 
 	point p1 = A[0], p2 = A.back();
 	deque<point> up, down;
